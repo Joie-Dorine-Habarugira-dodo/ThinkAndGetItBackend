@@ -1,0 +1,34 @@
+*********** REQUEST ***********
+URI: https://think-and-get-it-production.up.railway.app/api/v1/auth/forgot-password
+Method: GET
+Headers: Accept=application/json, application/javascript, text/javascript, text/json
+Content-Type=application/json
+Body: null
+
+
+
+*********** RESPONSE ***********
+Status Code: 404
+Response Time: 2549 ms
+Body:
+{
+    "success": false,
+    "message": "Route /api/v1/auth/forgot-password not found"
+}
+*********** REQUEST ***********
+URI: https://think-and-get-it-production.up.railway.app/api/v1/auth/reset-password/null
+Method: POST
+Headers: Accept=application/json, application/javascript, text/javascript, text/json
+Content-Type=application/json
+Body: {"password":"NewUser@123456"}
+
+
+
+*********** RESPONSE ***********
+Status Code: 400
+Response Time: 1404 ms
+Body:
+{
+    "success": false,
+    "message": "Invalid or expired reset token"
+}
