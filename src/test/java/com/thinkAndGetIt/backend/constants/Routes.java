@@ -1,4 +1,4 @@
-package com.thinkAndGetIt.backend.routes;
+package com.thinkAndGetIt.backend.constants;
 
 public class Routes {
     public static final String REGISTER = "/auth/register";

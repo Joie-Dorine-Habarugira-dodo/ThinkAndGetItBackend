@@ -1,4 +1,4 @@
-package com.thinkAndGetIt.backend.statuscodes;
+package com.thinkAndGetIt.backend.constants;
 
 public enum StatusCodes {
     OK(200, "Request succeeded"),

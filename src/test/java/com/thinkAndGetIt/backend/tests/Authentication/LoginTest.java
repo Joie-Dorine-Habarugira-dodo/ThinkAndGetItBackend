@@ -1,8 +1,10 @@
 package com.thinkAndGetIt.backend.tests.Authentication;
 
 import com.thinkAndGetIt.backend.base.BaseTest;
+import com.thinkAndGetIt.backend.constants.ResponseMessages;
+import com.thinkAndGetIt.backend.constants.ResponsePaths;
 import com.thinkAndGetIt.backend.flow.AuthFlow;
-import com.thinkAndGetIt.backend.statuscodes.StatusCodes;
+import com.thinkAndGetIt.backend.constants.StatusCodes;
 import com.thinkAndGetIt.backend.utils.ConfigLoader;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -11,31 +13,30 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class LoginTest extends BaseTest {
+    String email= ConfigLoader.get("email");
+    String password= ConfigLoader.get("password");
+    String invalidPassword= ConfigLoader.get("invalidPassword");
+
+
     @Test
     public void loginTest() throws IOException {
         Response response= new AuthFlow().login();
         Assert.assertEquals(response.getStatusCode(), StatusCodes.OK.code());
-        Assert.assertEquals(response.jsonPath().getString("message"), "Login successful");
+        Assert.assertEquals(response.jsonPath().getString(ResponsePaths.MESSAGE), ResponseMessages.LOGIN_SUCCESS);
     }
 
     @Test
     public void loginWithInvalidEmailTest() throws IOException {
-        Response response= new AuthFlow().login(
-                ConfigLoader.get("invalid_email"),
-                ConfigLoader.get("password")
-        );
+        Response response= new AuthFlow().login(email, password);
         Assert.assertEquals(response.getStatusCode(), StatusCodes.UNAUTHORIZED.code());
-        Assert.assertEquals(response.jsonPath().getString("message"), "Invalid email or password");
+        Assert.assertEquals(response.jsonPath().getString(ResponsePaths.MESSAGE), ResponseMessages.INVALID_EMAIL_OR_PASSWORD);
     }
 
     @Test
     public void loginWithInvalidPasswordTest() throws IOException {
-        Response response= new AuthFlow().login(
-                ConfigLoader.get("email"),
-                ConfigLoader.get("invalid_password")
-        );
+        Response response= new AuthFlow().login(email, invalidPassword);
         Assert.assertEquals(response.getStatusCode(), StatusCodes.UNAUTHORIZED.code());
-        Assert.assertEquals(response.jsonPath().getString("message"), "Invalid email or password");
+        Assert.assertEquals(response.jsonPath().getString(ResponsePaths.MESSAGE), ResponseMessages.INVALID_EMAIL_OR_PASSWORD);
     }
 
     @Test

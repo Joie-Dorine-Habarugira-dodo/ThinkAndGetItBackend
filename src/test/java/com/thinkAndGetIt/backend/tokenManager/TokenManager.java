@@ -1,7 +1,7 @@
 package com.thinkAndGetIt.backend.tokenManager;
 
-import com.thinkAndGetIt.backend.routes.Routes;
-import com.thinkAndGetIt.backend.statuscodes.StatusCodes;
+import com.thinkAndGetIt.backend.constants.Routes;
+import com.thinkAndGetIt.backend.constants.StatusCodes;
 import com.thinkAndGetIt.backend.utils.ConfigLoader;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;

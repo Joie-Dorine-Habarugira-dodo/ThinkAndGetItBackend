@@ -2,7 +2,7 @@ package com.thinkAndGetIt.backend.tests.Authentication;
 
 import com.thinkAndGetIt.backend.base.BaseTest;
 import com.thinkAndGetIt.backend.flow.AuthFlow;
-import com.thinkAndGetIt.backend.statuscodes.StatusCodes;
+import com.thinkAndGetIt.backend.constants.StatusCodes;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;

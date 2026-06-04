@@ -3,8 +3,7 @@ package com.thinkAndGetIt.backend.flow;
 import com.thinkAndGetIt.backend.base.RestResource;
 import com.thinkAndGetIt.backend.payloads.LoginPayload;
 import com.thinkAndGetIt.backend.payloads.RegisterPayload;
-import com.thinkAndGetIt.backend.routes.Routes;
-import com.thinkAndGetIt.backend.statuscodes.StatusCodes;
+import com.thinkAndGetIt.backend.constants.Routes;
 import com.thinkAndGetIt.backend.utils.ConfigLoader;
 import com.thinkAndGetIt.backend.utils.PayloadFaker;
 import io.restassured.response.Response;
@@ -13,7 +12,6 @@ import io.restassured.specification.RequestSpecification;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
 public class AuthFlow {
     private RequestSpecification requestSpecification;
@@ -74,7 +72,7 @@ public class AuthFlow {
         Map<String, Object> payload = new HashMap<>();
         payload.put("email", ConfigLoader.get("email"));
 
-        return RestResource.get(Routes.FORGOT_PASSWORD);
+        return RestResource.post(Routes.FORGOT_PASSWORD, payload);
     }
 
     public Response resetPassword() throws IOException {
