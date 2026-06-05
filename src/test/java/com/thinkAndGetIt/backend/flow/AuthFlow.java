@@ -32,7 +32,7 @@ public class AuthFlow {
 
     public Response getCurrentUser() throws IOException {
         String token= login().jsonPath().getString("data.token");
-        return RestResource.getUser(Routes.ME,token);
+        return RestResource.get(Routes.ME,token);
     }
 
     public static Response register(

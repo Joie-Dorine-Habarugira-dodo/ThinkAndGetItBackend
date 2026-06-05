@@ -9,6 +9,9 @@ public class PayloadFaker {
     public static String generateEmail() {
         return faker.internet().emailAddress();
     }
+    public static String generatePassword() {
+        return faker.internet().password();
+    }
     public static String generateFirstName() {
         return faker.name().firstName();
     }
@@ -18,4 +21,20 @@ public class PayloadFaker {
     public static String generatePhone() {
         return faker.phoneNumber().phoneNumber();
     }
+    public static String generateStreet() {
+        return faker.address().streetAddress();
+    }
+    public static String generateCity() {
+        return faker.address().city();
+    }
+    public static String generateState() {
+        return faker.address().state();
+    }
+    public static String generateCountry() {
+        return faker.address().country();
+    }
+    public static String generatePostalCode() {
+        return faker.address().zipCode();
+    }
+
 }
