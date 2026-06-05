@@ -9,7 +9,7 @@ Body: {"email":"admin@thinkandgetit.com"}
 
 *********** RESPONSE ***********
 Status Code: 200
-Response Time: 1836 ms
+Response Time: 2003 ms
 Body:
 {
     "success": true,
@@ -29,7 +29,7 @@ Body: {"password":"NewUser@123456"}
 
 *********** RESPONSE ***********
 Status Code: 400
-Response Time: 1263 ms
+Response Time: 823 ms
 Body:
 {
     "success": false,

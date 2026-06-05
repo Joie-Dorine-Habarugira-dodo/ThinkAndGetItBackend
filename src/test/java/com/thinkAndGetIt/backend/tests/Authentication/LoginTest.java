@@ -15,7 +15,7 @@ import java.io.IOException;
 public class LoginTest extends BaseTest {
     String email= ConfigLoader.get("email");
     String password= ConfigLoader.get("password");
-    String invalidPassword= ConfigLoader.get("invalidPassword");
+    String invalidPassword= ConfigLoader.get("invalid_password");
 
 
     @Test
