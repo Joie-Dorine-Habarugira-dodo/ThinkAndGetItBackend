@@ -1,0 +1,37 @@
+*********** REQUEST ***********
+URI: https://think-and-get-it-production.up.railway.app/api/v1/auth/forgot-password
+Method: POST
+Headers: Accept=application/json, application/javascript, text/javascript, text/json
+Content-Type=application/json
+Body: {"email":"admin@thinkandgetit.com"}
+
+
+
+*********** RESPONSE ***********
+Status Code: 200
+Response Time: 2003 ms
+Body:
+{
+    "success": true,
+    "message": "If an account with that email exists, a reset link has been sent.",
+    "data": {
+        
+    }
+}
+*********** REQUEST ***********
+URI: https://think-and-get-it-production.up.railway.app/api/v1/auth/reset-password/null
+Method: POST
+Headers: Accept=application/json, application/javascript, text/javascript, text/json
+Content-Type=application/json
+Body: {"password":"NewUser@123456"}
+
+
+
+*********** RESPONSE ***********
+Status Code: 400
+Response Time: 823 ms
+Body:
+{
+    "success": false,
+    "message": "Invalid or expired reset token"
+}
