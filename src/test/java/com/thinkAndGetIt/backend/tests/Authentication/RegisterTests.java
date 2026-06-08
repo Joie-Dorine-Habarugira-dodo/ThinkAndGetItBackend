@@ -49,7 +49,7 @@ public class RegisterTests {
     public void registerWithMissingPassword() throws IOException {
         Response response = AuthFlow.register(email, "", firstName, lastName, phone);
 
-        Assert.assertEquals(response.getStatusCode(), StatusCodes.UNAUTHORIZED.code());
+        Assert.assertEquals(response.getStatusCode(), StatusCodes.BAD_REQUEST.code());
         Assert.assertEquals(response.jsonPath().getString(ResponsePaths.MESSAGE), ResponseMessages.INVALID_EMAIL_OR_PASSWORD);
     }
 
@@ -62,7 +62,7 @@ public class RegisterTests {
                 "",
                 ""
         );
-        Assert.assertEquals(response.getStatusCode(), StatusCodes.UNAUTHORIZED.code());
+        Assert.assertEquals(response.getStatusCode(), StatusCodes.BAD_REQUEST.code());
         Assert.assertEquals(response.jsonPath().getString(ResponsePaths.MESSAGE), ResponseMessages.INVALID_EMAIL_OR_PASSWORD);
     }
 }

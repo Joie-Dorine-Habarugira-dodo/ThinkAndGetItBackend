@@ -1,4 +1,8 @@
 package com.thinkAndGetIt.backend.base;
+import com.thinkAndGetIt.backend.filters.CustomLoggingFilter;
+import com.thinkAndGetIt.backend.tokenManager.TokenManager;
+import com.thinkAndGetIt.backend.utils.ConfigLoader;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import java.io.IOException;
@@ -20,7 +24,30 @@ public class RestResource {
                 .response();
     }
 
-    public static Response getUser(String path, String token) throws IOException {
+    public static Response postAvatar(String token, String path, Object file) throws IOException {
+        return given()
+                .baseUri(ConfigLoader.get("base_url"))
+                .header("Authorization", "Bearer " + token)
+                .multiPart("avatar", file)
+                .log().all()      // logs every request
+                .when()
+                .post(path)
+                .then().log().all()
+                .extract().response();
+    }
+
+    public static Response post(String token, String path, Object payload) throws IOException {
+        return given().spec(getRequestSpec())
+                .header("Authorization", "Bearer " + token)
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .when()
+                .post(path)
+                .then().log().all()
+                .extract().response();
+    }
+
+    public static Response get(String path, String token) throws IOException {
         return given(getRequestSpec())
                 .header("Authorization", "Bearer "+ token)
                 .when()
@@ -39,6 +66,17 @@ public class RestResource {
                 .spec(getResponseSpec())
                 .extract()
                 .response();
+    }
+
+    public static Response put(String token, String path, Object payload) throws IOException {
+        return given().spec(getRequestSpec())
+                .header("Authorization", "Bearer "+ token)
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .when()
+                .put(path)
+                .then().log().all()
+                .extract().response();
     }
 
 }

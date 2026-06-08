@@ -1,37 +1,67 @@
 *********** REQUEST ***********
-URI: https://think-and-get-it-production.up.railway.app/api/v1/auth/forgot-password
+URI: https://think-and-get-it-production.up.railway.app/api/v1/auth/login
 Method: POST
 Headers: Accept=application/json, application/javascript, text/javascript, text/json
 Content-Type=application/json
-Body: {"email":"admin@thinkandgetit.com"}
+Body: {"email":"john@example.com","password":"c40eoadawy6"}
 
 
 
 *********** RESPONSE ***********
 Status Code: 200
-Response Time: 2003 ms
+Response Time: 1811 ms
 Body:
 {
     "success": true,
-    "message": "If an account with that email exists, a reset link has been sent.",
+    "message": "Login successful",
     "data": {
-        
+        "user": {
+            "id": "ad90b72e-7d69-45f6-b49f-6d2442c51342",
+            "email": "john@example.com",
+            "firstName": "Christal",
+            "lastName": "Hudson",
+            "role": "CUSTOMER",
+            "isVerified": false,
+            "resetTokenExpiry": "2026-06-05T09:52:21.006Z",
+            "avatar": null,
+            "phone": "1-728-304-4595 x39910",
+            "createdAt": "2026-06-03T10:19:58.292Z",
+            "updatedAt": "2026-06-05T10:45:36.896Z"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkOTBiNzJlLTdkNjktNDVmNi1iNDlmLTZkMjQ0MmM1MTM0MiIsImlhdCI6MTc4MDY2MDY1MywiZXhwIjoxNzgxMjY1NDUzfQ.p0DQ2WliFkEF56YrIuCLLn4xlOwfP861Z-qF9TCTYc8",
+        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkOTBiNzJlLTdkNjktNDVmNi1iNDlmLTZkMjQ0MmM1MTM0MiIsImlhdCI6MTc4MDY2MDY1MywiZXhwIjoxNzgzMjUyNjUzfQ.nfpr4dx2cyAfxO4c3n-Ovc5dvU7buTtORvMpfZnuTck"
     }
 }
 *********** REQUEST ***********
-URI: https://think-and-get-it-production.up.railway.app/api/v1/auth/reset-password/null
+URI: https://think-and-get-it-production.up.railway.app/api/v1/users/addresses
 Method: POST
 Headers: Accept=application/json, application/javascript, text/javascript, text/json
+Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkOTBiNzJlLTdkNjktNDVmNi1iNDlmLTZkMjQ0MmM1MTM0MiIsImlhdCI6MTc4MDY2MDY1MywiZXhwIjoxNzgxMjY1NDUzfQ.p0DQ2WliFkEF56YrIuCLLn4xlOwfP861Z-qF9TCTYc8
 Content-Type=application/json
-Body: {"password":"NewUser@123456"}
+Body: {"firstName":"John","lastName":"Doe","label":"Home","city":"Port Humberto","isDefault":true,"postalCode":"16968","street":"502 Streich Vista","state":"Alaska","country":"Svalbard & Jan Mayen Islands","phone":"+250788123456"}
 
 
 
 *********** RESPONSE ***********
-Status Code: 400
-Response Time: 823 ms
+Status Code: 201
+Response Time: 793 ms
 Body:
 {
-    "success": false,
-    "message": "Invalid or expired reset token"
+    "success": true,
+    "message": "Address added",
+    "data": {
+        "id": "93ea01d8-cd12-41df-a454-574b288c800e",
+        "userId": "ad90b72e-7d69-45f6-b49f-6d2442c51342",
+        "label": "Home",
+        "firstName": "John",
+        "lastName": "Doe",
+        "phone": "+250788123456",
+        "street": "502 Streich Vista",
+        "city": "Port Humberto",
+        "state": "Alaska",
+        "country": "Svalbard & Jan Mayen Islands",
+        "postalCode": "16968",
+        "isDefault": true,
+        "createdAt": "2026-06-05T11:57:34.532Z"
+    }
 }
