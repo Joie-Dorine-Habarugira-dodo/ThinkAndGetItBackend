@@ -45,7 +45,7 @@ public class LoginTest extends BaseTest {
                 "",
                 ""
         );
-        Assert.assertEquals(response.getStatusCode(), StatusCodes.UNAUTHORIZED.code());
+        Assert.assertEquals(response.getStatusCode(), StatusCodes.BAD_REQUEST.code());
     }
 }
 
