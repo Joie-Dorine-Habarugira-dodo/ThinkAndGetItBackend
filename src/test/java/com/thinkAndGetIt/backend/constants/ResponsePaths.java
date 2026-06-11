@@ -8,4 +8,5 @@ public class ResponsePaths {
     public static final String REFRESH_TOKEN = "data.refreshToken";
     public static final String MESSAGE = "message";
     public static final String SUCCESS = "success";
+    public static final String CATEGORY_SLUG= "data.slug";
 }

@@ -25,6 +25,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(response.jsonPath().getString(ResponsePaths.MESSAGE), ResponseMessages.LOGIN_SUCCESS);
     }
 
+    //Negative Tests
     @Test
     public void loginWithInvalidEmailTest() throws IOException {
         Response response= new AuthFlow().login(email, password);

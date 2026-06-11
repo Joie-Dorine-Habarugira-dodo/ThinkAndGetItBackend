@@ -40,7 +40,6 @@ public class UserFlow {
     }
 
     public Response getAddresses() throws IOException {
-        AuthFlow authFlow = new AuthFlow();
         return RestResource.get(Routes.ADDRESSES, TokenManager.getAuthToken());
     }
 
