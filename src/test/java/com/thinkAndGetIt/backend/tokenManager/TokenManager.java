@@ -27,9 +27,27 @@ public class TokenManager {
         refreshToken = response.jsonPath().getString("data.refreshToken");
     }
 
+    public static void generateAdminTokens() throws IOException {
+        System.out.println("Base URL: " + ConfigLoader.get("base_url"));
+        System.out.println("Route: " + Routes.LOGIN);
+
+        Response response = AuthFlow.login(ConfigLoader.get("admin_email"), ConfigLoader.get("admin_password"));
+
+        authToken = response.jsonPath().getString("data.token");
+        refreshToken = response.jsonPath().getString("data.refreshToken");
+    }
+
+
+
     public static String getAuthToken() throws IOException {
         if (authToken == null) {
             generateTokens();
+        }
+        return authToken;
+    }
+    public static String getAdminAuthToken() throws IOException {
+        if (authToken == null) {
+            generateAdminTokens();
         }
         return authToken;
     }

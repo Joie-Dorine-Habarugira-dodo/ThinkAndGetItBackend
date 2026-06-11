@@ -6,6 +6,7 @@ import com.thinkAndGetIt.backend.payloads.RegisterPayload;
 public class PayloadFaker {
     private static final Faker faker = new Faker();
 
+    //Authentication
     public static String generateEmail() {
         return faker.internet().emailAddress();
     }
@@ -21,6 +22,8 @@ public class PayloadFaker {
     public static String generatePhone() {
         return faker.phoneNumber().phoneNumber();
     }
+
+    //User management
     public static String generateStreet() {
         return faker.address().streetAddress();
     }
@@ -36,5 +39,14 @@ public class PayloadFaker {
     public static String generatePostalCode() {
         return faker.address().zipCode();
     }
+
+    //Categories
+    public static String generateCategoryName(){
+        return faker.commerce().department();
+    }
+    public static String generateCategoryDescription(){
+      return faker.commerce().department();
+    }
+
 
 }

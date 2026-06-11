@@ -28,6 +28,7 @@ public class RegisterTests {
         Assert.assertEquals(response.jsonPath().getString(ResponsePaths.MESSAGE), ResponseMessages.REGISTER_SUCCESS);
     }
 
+    //Negative Tests
     @Test
     public void registerWithExistingEmail() throws IOException {
 
