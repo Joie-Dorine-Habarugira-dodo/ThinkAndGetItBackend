@@ -9,7 +9,7 @@ Body: {"email":"admin@thinkandgetit.com","password":"Admin@123456"}
 
 *********** RESPONSE ***********
 Status Code: 200
-Response Time: 5543 ms
+Response Time: 2963 ms
 Body:
 {
     "success": true,
@@ -18,33 +18,33 @@ Body:
         "user": {
             "id": "d0a82fb0-830f-4800-b855-011e7211d458",
             "email": "admin@thinkandgetit.com",
-            "firstName": "Alice",
-            "lastName": "Smith",
+            "firstName": "Xmhnpur",
+            "lastName": "Sfkfgvyf",
             "role": "ADMIN",
             "isVerified": true,
-            "resetTokenExpiry": "2026-06-08T09:52:28.724Z",
+            "resetTokenExpiry": "2026-06-11T09:09:46.032Z",
             "avatar": null,
-            "phone": "+250788123456",
+            "phone": "+250784404289",
             "createdAt": "2026-06-02T13:22:28.623Z",
-            "updatedAt": "2026-06-08T08:52:28.725Z"
+            "updatedAt": "2026-06-11T17:21:21.909Z"
         },
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTgyZmIwLTgzMGYtNDgwMC1iODU1LTAxMWU3MjExZDQ1OCIsImlhdCI6MTc4MDkyODM0OSwiZXhwIjoxNzgxNTMzMTQ5fQ.5Cf0IT6yGb8S8reCKGIo770zP1a5_cnwvCkmM6CboAA",
-        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTgyZmIwLTgzMGYtNDgwMC1iODU1LTAxMWU3MjExZDQ1OCIsImlhdCI6MTc4MDkyODM0OSwiZXhwIjoxNzgzNTIwMzQ5fQ.5rdHxiYO5AmHr1JK8F1OhUMt11LbXY-HwjgiKJ6x6RQ"
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTgyZmIwLTgzMGYtNDgwMC1iODU1LTAxMWU3MjExZDQ1OCIsImlhdCI6MTc4MTI1MjMyMywiZXhwIjoxNzgxODU3MTIzfQ.hnVTLnIP7o1NP3eD_w04BCo7lOg986-cNBFhGqLmQMw",
+        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTgyZmIwLTgzMGYtNDgwMC1iODU1LTAxMWU3MjExZDQ1OCIsImlhdCI6MTc4MTI1MjMyMywiZXhwIjoxNzgzODQ0MzIzfQ.rn0qDri6RQ7ap_BXP4YCH0nKaCKodKnWWBaLtilohIE"
     }
 }
 *********** REQUEST ***********
 URI: https://think-and-get-it-production.up.railway.app/api/v1/categories
 Method: POST
 Headers: Accept=application/json, application/javascript, text/javascript, text/json
-Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTgyZmIwLTgzMGYtNDgwMC1iODU1LTAxMWU3MjExZDQ1OCIsImlhdCI6MTc4MDkyODM0OSwiZXhwIjoxNzgxNTMzMTQ5fQ.5Cf0IT6yGb8S8reCKGIo770zP1a5_cnwvCkmM6CboAA
+Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwYTgyZmIwLTgzMGYtNDgwMC1iODU1LTAxMWU3MjExZDQ1OCIsImlhdCI6MTc4MTI1MjMyMywiZXhwIjoxNzgxODU3MTIzfQ.hnVTLnIP7o1NP3eD_w04BCo7lOg986-cNBFhGqLmQMw
 Content-Type=application/json
-Body: {"name":"Baby & Toys","description":"Automotive","parentId":"root"}
+Body: {"name":"Computers","parentId":"root","description":"Home & Movies"}
 
 
 
 *********** RESPONSE ***********
 Status Code: 400
-Response Time: 728 ms
+Response Time: 1057 ms
 Body:
 {
     "success": false,
